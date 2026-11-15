@@ -50,13 +50,18 @@
     },
     {
       "id": "moonnotforsale",
-      "titre": "Moon Not For Sale",
-      "description": "Description à compléter.",
+      "titre": "Moon not for Sale",
+      "description": "Récit à choix façon théâtre de l'absurde : un promoteur d'Aldébaran a acheté la Lune avec des pâtisseries et commence à l'emporter. 8 personnages, 1 500 choix, 15 fins, et un d20 pour les actions risquées.",
       "onglet": "jouer",
-      "tags": [],
+      "tags": [
+        "Récit à choix",
+        "Absurde",
+        "15 fins"
+      ],
       "emoji": "🌙",
       "couleur": "#6366f1",
-      "url": "https://kevm29.github.io/MoonNotForSale/"
+      "url": "https://kevm29.github.io/MoonNotForSale/",
+      "depot": "https://github.com/kevm29/MoonNotForSale"
     },
     {
       "id": "a-plume-perdue",
