@@ -1,0 +1,92 @@
+{
+  "titre": "Kikinatset Production",
+  "sousTitre": "Tous mes jeux et projets au même endroit : on clique et on joue, ou on télécharge et on joue.",
+  "github": "https://github.com/kevm29",
+  "projets": [
+    {
+      "id": "kotiontwin",
+      "titre": "KotionTwin",
+      "description": "Les jeux web de Motion Twin (2004-2015) rejouables dans le navigateur : 146 jeux restaurés, recherche, favoris, jeu au hasard.",
+      "onglet": "jouer",
+      "url": "https://kevm29.github.io/KotionTwin/",
+      "depot": "https://github.com/kevm29/KotionTwin",
+      "tags": ["Rétro", "Catalogue", "Flash"],
+      "emoji": "🕹️",
+      "couleur": "#f59e0b"
+    },
+    {
+      "id": "ouizzquizz",
+      "titre": "OuizzQuizz",
+      "description": "Jeu musical à plusieurs sous-jeux (blind test, flash 1 seconde, refrain…), seul ou entre amis avec un code de partie.",
+      "onglet": "jouer",
+      "url": "https://kevm29.github.io/OuizzQuizz/",
+      "depot": "https://github.com/kevm29/OuizzQuizz",
+      "tags": ["Musique", "Multijoueur", "Quiz"],
+      "emoji": "🎵",
+      "couleur": "#ec4899"
+    },
+    {
+      "id": "labescape",
+      "titre": "Lab Escape",
+      "description": "Escape game en 3D dans un laboratoire de biologie. Fouille, combine les objets et trouve la sortie.",
+      "onglet": "jouer",
+      "url": "https://kevm29.github.io/LabEscape/",
+      "depot": "https://github.com/kevm29/LabEscape",
+      "tags": ["3D", "Escape game", "Énigmes"],
+      "emoji": "🧪",
+      "couleur": "#10b981"
+    },
+    {
+      "id": "kikifest",
+      "titre": "Kikifest",
+      "description": "Hammerfest à deux en réseau ! Télécharge le dossier, puis l'hôte double-clique sur Heberger-Windows.bat (ou Heberger-Mac.command) et envoie le lien à l'autre joueur.",
+      "onglet": "telecharger",
+      "fichier": "https://github.com/kevm29/Kikifest/archive/refs/heads/main.zip",
+      "libelleFichier": "Télécharger le .zip",
+      "depot": "https://github.com/kevm29/Kikifest",
+      "tags": ["Plateforme", "2 joueurs", "Réseau"],
+      "emoji": "🍦",
+      "couleur": "#3b82f6"
+    },
+    {
+      "id": "regalia",
+      "titre": "Regalia",
+      "description": "Refonte du jeu d'origine (version 2009).",
+      "onglet": "telecharger",
+      "fichier": "telechargements/regalia.html",
+      "tags": ["Refonte"],
+      "emoji": "👑",
+      "couleur": "#a855f7"
+    },
+    {
+      "id": "a-plume-perdue",
+      "titre": "À plume perdue",
+      "description": "Description à compléter.",
+      "onglet": "telecharger",
+      "fichier": "telechargements/A_Plume_Perdue.html",
+      "tags": [],
+      "emoji": "🪶",
+      "couleur": "#0ea5e9"
+    },
+    {
+      "id": "genetica",
+      "titre": "GeneTiCA",
+      "description": "Description à compléter.",
+      "onglet": "telecharger",
+      "fichier": "telechargements/GeneTiCA.html",
+      "tags": ["Généalogie"],
+      "emoji": "🧬",
+      "couleur": "#14b8a6"
+    },
+    {
+      "id": "moonnotforsale",
+      "titre": "Moon Not For Sale",
+      "description": "Description à compléter.",
+      "onglet": "telecharger",
+      "fichier": "telechargements/MoonNotForSale.html",
+      "tags": [],
+      "emoji": "🌙",
+      "couleur": "#6366f1"
+    }
+  ]
+}

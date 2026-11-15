@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kikinatset Production</title>
+<meta name="description" content="Tous les jeux et projets de Kikinatset Production : à jouer en ligne ou à télécharger.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4ff;
+    --bg-2: #ece8ff;
+    --surface: #ffffff;
+    --text: #1d1838;
+    --muted: #6b6690;
+    --border: #e2ddf7;
+    --accent: #7c3aed;
+    --accent-2: #ec4899;
+    --shadow: 0 10px 30px -12px rgba(60, 30, 140, .25);
+    --radius: 20px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f0c1f;
+      --bg-2: #1a1533;
+      --surface: #1c1735;
+      --text: #f1eeff;
+      --muted: #a39dc7;
+      --border: #2f2856;
+      --accent: #a78bfa;
+      --accent-2: #f472b6;
+      --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f0c1f;
+    --bg-2: #1a1533;
+    --surface: #1c1735;
+    --text: #f1eeff;
+    --muted: #a39dc7;
+    --border: #2f2856;
+    --accent: #a78bfa;
+    --accent-2: #f472b6;
+    --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Nunito", system-ui, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  /* En-tête */
+  header.wrap { padding-top: 56px; padding-bottom: 28px; text-align: center; }
+  .logo {
+    display: inline-grid; place-items: center;
+    width: 72px; height: 72px; border-radius: 22px;
+    font-size: 38px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: var(--shadow);
+    transform: rotate(-6deg);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: "Fredoka", "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1.1;
+    margin: 0 0 10px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .subtitle { color: var(--muted); font-size: 1.1rem; max-width: 620px; margin: 0 auto; }
+
+  /* Onglets */
+  .toolbar {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    align-items: center; justify-content: space-between;
+    margin: 28px 0 24px;
+  }
+  .tabs {
+    display: inline-flex; gap: 6px; padding: 6px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; box-shadow: var(--shadow);
+    max-width: 100%;
+  }
+  .tab {
+    appearance: none; border: 0; cursor: pointer;
+    font: 600 1rem "Fredoka", "Nunito", sans-serif;
+    color: var(--muted); background: transparent;
+    padding: 10px 18px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+  }
+  .tab:hover { color: var(--text); }
+  .tab[aria-selected="true"] {
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  .count {
+    font-size: .8rem; min-width: 22px; padding: 1px 7px; border-radius: 999px;
+    background: color-mix(in srgb, currentColor 18%, transparent);
+  }
+  .search {
+    flex: 1 1 220px; max-width: 320px;
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 10px 16px;
+  }
+  .search input {
+    border: 0; outline: 0; background: transparent; color: var(--text);
+    font: inherit; width: 100%;
+  }
+  .search:focus-within { border-color: var(--accent); }
+
+  .panel-intro { color: var(--muted); margin: 0 0 18px; }
+
+  /* Cartes */
+  .grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  .card {
+    position: relative; display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .cover {
+    height: 130px; display: grid; place-items: center;
+    font-size: 56px;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(255,255,255,.35), transparent 45%),
+      linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #1d1838));
+  }
+  .cover img { width: 100%; height: 100%; object-fit: cover; }
+  .card-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .card h2 {
+    font-family: "Fredoka", "Nunito", sans-serif;
+    font-size: 1.35rem; margin: 0; line-height: 1.2;
+  }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: .75rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px;
+    color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent);
+  }
+  .actions { margin-top: auto; padding-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    text-decoration: none; font-weight: 700;
+    padding: 10px 16px; border-radius: 12px;
+    border: 1px solid transparent; cursor: pointer;
+    font-size: .95rem;
+  }
+  .btn-main { flex: 1; color: #fff; background: var(--c); }
+  .btn-main:hover { filter: brightness(1.08); }
+  .btn-ghost { color: var(--text); border-color: var(--border); background: transparent; }
+  .btn-ghost:hover { border-color: var(--c); }
+  .btn[aria-disabled="true"] {
+    background: var(--bg-2); color: var(--muted); cursor: not-allowed; pointer-events: none;
+  }
+  .soon {
+    position: absolute; top: 12px; right: 12px;
+    font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+    background: rgba(0,0,0,.45); color: #fff;
+  }
+
+  .empty, .error {
+    text-align: center; color: var(--muted);
+    padding: 40px 16px; border: 2px dashed var(--border); border-radius: var(--radius);
+  }
+  footer.wrap { text-align: center; color: var(--muted); padding-top: 48px; padding-bottom: 32px; font-size: .9rem; }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    header.wrap { padding-top: 36px; }
+    .toolbar { flex-direction: column; align-items: stretch; }
+    .tabs { display: flex; width: 100%; border-radius: 18px; }
+    .tab { flex: 1; justify-content: center; white-space: normal; text-align: center; padding: 9px 8px; font-size: .9rem; border-radius: 14px; line-height: 1.2; }
+    .search { flex: none; max-width: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="logo" aria-hidden="true">🎮</div>
+    <h1 id="titre">Kikinatset Production</h1>
+    <p class="subtitle" id="sous-titre">Tous mes jeux et projets au même endroit.</p>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="Catégories">
+        <button class="tab" role="tab" id="tab-jouer" aria-controls="panel" aria-selected="true" data-onglet="jouer">
+          ▶ On joue directement <span class="count" id="count-jouer">0</span>
+        </button>
+        <button class="tab" role="tab" id="tab-telecharger" aria-controls="panel" aria-selected="false" data-onglet="telecharger">
+          ⬇ On télécharge et on joue <span class="count" id="count-telecharger">0</span>
+        </button>
+      </div>
+      <label class="search">
+        <span aria-hidden="true">🔎</span>
+        <input type="search" id="recherche" placeholder="Rechercher un jeu…" aria-label="Rechercher un jeu">
+      </label>
+    </div>
+
+    <section id="panel" role="tabpanel" aria-labelledby="tab-jouer">
+      <p class="panel-intro" id="intro"></p>
+      <div class="grid" id="grille"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Fait avec ❤️ par Kikinatset Production · <a id="lien-github" href="https://github.com/kevm29">GitHub</a>
+  </footer>
+
+<script>
+(() => {
+  const INTROS = {
+    jouer: "Clique sur « Jouer » : le jeu s'ouvre directement dans ton navigateur, rien à installer.",
+    telecharger: "Télécharge le fichier, puis ouvre-le sur ton ordinateur pour jouer, même sans connexion."
+  };
+  const LIBELLES = { jouer: "Jouer ▶", telecharger: "Télécharger ⬇" };
+
+  const grille = document.getElementById("grille");
+  const intro = document.getElementById("intro");
+  const recherche = document.getElementById("recherche");
+  const panel = document.getElementById("panel");
+  const tabs = [...document.querySelectorAll(".tab")];
+
+  let projets = [];
+  let onglet = location.hash === "#telecharger" ? "telecharger" : "jouer";
+  const dispo = new Map(); // fichier local -> true/false
+
+  const el = (tag, attrs = {}, ...enfants) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === undefined || v === null || v === false) continue;
+      if (k === "style") n.style.cssText = v; else n.setAttribute(k, v);
+    }
+    for (const e of enfants) if (e != null) n.append(e);
+    return n;
+  };
+  const estLocal = (f) => f && !/^https?:\/\//i.test(f);
+
+  function carte(p) {
+    const couleur = p.couleur || "#7c3aed";
+    const cible = p.onglet === "jouer" ? p.url : p.fichier;
+    const absent = estLocal(cible) && dispo.get(cible) === false;
+
+    const cover = el("div", { class: "cover", "aria-hidden": "true" });
+    if (p.image) cover.append(el("img", { src: p.image, alt: "", loading: "lazy" }));
+    else cover.textContent = p.emoji || "🎲";
+
+    const actions = el("div", { class: "actions" });
+    const main = el("a", {
+      class: "btn btn-main",
+      href: absent ? null : cible,
+      "aria-disabled": absent ? "true" : null,
+      target: p.onglet === "jouer" ? "_blank" : null,
+      rel: p.onglet === "jouer" ? "noopener" : null,
+      download: p.onglet === "telecharger" && estLocal(cible) ? "" : null
+    }, absent ? "Bientôt disponible" : (p.libelleFichier || p.libelle || LIBELLES[p.onglet]));
+    actions.append(main);
+    if (p.depot) actions.append(el("a", { class: "btn btn-ghost", href: p.depot, target: "_blank", rel: "noopener", title: "Voir le code sur GitHub" }, "Code"));
+
+    const tags = el("div", { class: "tags" }, ...(p.tags || []).map(t => el("span", { class: "tag" }, t)));
+
+    return el("article", { class: "card", style: `--c:${couleur}` },
+      absent ? el("span", { class: "soon" }, "Bientôt") : null,
+      cover,
+      el("div", { class: "card-body" },
+        el("h2", {}, p.titre),
+        p.description ? el("p", {}, p.description) : null,
+        (p.tags && p.tags.length) ? tags : null,
+        actions
+      )
+    );
+  }
+
+  function afficher() {
+    tabs.forEach(t => {
+      const actif = t.dataset.onglet === onglet;
+      t.setAttribute("aria-selected", actif);
+      t.tabIndex = actif ? 0 : -1;
+    });
+    panel.setAttribute("aria-labelledby", "tab-" + onglet);
+    intro.textContent = INTROS[onglet];
+
+    const q = recherche.value.trim().toLowerCase();
+    const liste = projets.filter(p => p.onglet === onglet).filter(p =>
+      !q || [p.titre, p.description, ...(p.tags || [])].join(" ").toLowerCase().includes(q)
+    );
+
+    grille.replaceChildren(...liste.map(carte));
+    if (!liste.length) {
+      grille.append(el("div", { class: "empty", style: "grid-column:1/-1" },
+        q ? "Aucun jeu ne correspond à ta recherche." : "Rien ici pour l'instant… ça arrive bientôt !"));
+    }
+  }
+
+  function changerOnglet(o) {
+    onglet = o;
+    history.replaceState(null, "", "#" + o);
+    afficher();
+  }
+
+  tabs.forEach(t => t.addEventListener("click", () => changerOnglet(t.dataset.onglet)));
+  document.querySelector(".tabs").addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    const i = tabs.findIndex(t => t.dataset.onglet === onglet);
+    const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    changerOnglet(n.dataset.onglet);
+    n.focus();
+  });
+  recherche.addEventListener("input", afficher);
+
+  // Vérifie quels fichiers locaux existent vraiment, pour griser ceux pas encore déposés.
+  async function verifierFichiers() {
+    const locaux = projets.filter(p => p.onglet === "telecharger" && estLocal(p.fichier));
+    await Promise.all(locaux.map(async p => {
+      try {
+        const r = await fetch(p.fichier, { method: "HEAD", cache: "no-store" });
+        dispo.set(p.fichier, r.ok);
+      } catch { /* hors ligne ou file:// : on laisse le lien actif */ }
+    }));
+  }
+
+  fetch("projects.json", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(async data => {
+      projets = data.projets || [];
+      if (data.titre) { document.getElementById("titre").textContent = data.titre; document.title = data.titre; }
+      if (data.sousTitre) document.getElementById("sous-titre").textContent = data.sousTitre;
+      if (data.github) document.getElementById("lien-github").href = data.github;
+      for (const o of ["jouer", "telecharger"]) {
+        document.getElementById("count-" + o).textContent = projets.filter(p => p.onglet === o).length;
+      }
+      afficher();
+      await verifierFichiers();
+      afficher();
+    })
+    .catch(() => {
+      grille.replaceChildren(el("div", { class: "error", style: "grid-column:1/-1" },
+        "Impossible de charger projects.json. Ouvre la page depuis GitHub Pages (ou un petit serveur local) plutôt qu'en double-cliquant le fichier."));
+    });
+})();
+</script>
+</body>
+</html>
