@@ -59,6 +59,21 @@
       "url": "https://kevm29.github.io/MoonNotForSale/"
     },
     {
+      "id": "a-plume-perdue",
+      "titre": "À plume perdue",
+      "description": "Raymond, pigeon voyageur empaillé depuis 1916, se réveille un soir d'orage avec une lettre de poilu à la patte. Plateforme 2D en papier découpé, de Verdun à Crécy-la-Chapelle, avec un siècle de retard.",
+      "onglet": "jouer",
+      "tags": [
+        "Plateforme",
+        "Papier découpé",
+        "Humour noir"
+      ],
+      "emoji": "🪶",
+      "couleur": "#0ea5e9",
+      "url": "https://kevm29.github.io/A_Plume_Perdue/",
+      "depot": "https://github.com/kevm29/A_Plume_Perdue"
+    },
+    {
       "id": "kikifest",
       "titre": "Kikifest",
       "description": "Hammerfest à deux en réseau ! Télécharge le dossier, puis l'hôte double-clique sur Heberger-Windows.bat (ou Heberger-Mac.command) et envoie le lien à l'autre joueur.",
@@ -85,16 +100,6 @@
       ],
       "emoji": "👑",
       "couleur": "#a855f7"
-    },
-    {
-      "id": "a-plume-perdue",
-      "titre": "À plume perdue",
-      "description": "Description à compléter.",
-      "onglet": "telecharger",
-      "fichier": "telechargements/A_Plume_Perdue.html",
-      "tags": [],
-      "emoji": "🪶",
-      "couleur": "#0ea5e9"
     },
     {
       "id": "genetica",
